@@ -8,9 +8,10 @@ export class Card extends Component {
             <div class="card card-w">
                 <img src={Toadlet} class="card-img-top" alt="..."/>
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title">Pumpkin Toadlet</h5>
+                    <p class="card-text">“They’re not great jumpers, and they’re not particularly good walkers either. They sort of stomp around in a stilted, 
+                    peg-like version of walking,” - Edward Stanley </p>
+                    <a href="#" class="btn btn-primary">Beautiful</a>
                 </div>
             </div>
         </Fragment>);
