@@ -1,3 +1,26 @@
+/* ROOT lets you define certain things like variables for colors! You'll see this in many colors. */
+/* To use one of these variables instead of putting a color in you would instead put var(--variablename)*/
+:root {
+    /* MAIN COLORS */
+    --bsu_blue: #0033A0;
+    --bsu_orange: #D64309;
+    --dark_grey: #3F4444;
+    --cool_gray11c: #53565A;
+    --cool_gray7c: #97999B;
+    --cool_gray3c: #C8C9C7;
+    --cool_gray1c: #D9D9D6;
+    --lighest_gray: #F6F7F9;
+
+    /* SECONDARY COLORS  Use Sparingly*/
+    --dark_blue: #001F60;
+    --dark_blue2: #006BA6;
+    --strong_blue: #0072CE;
+    --moderate_blue: #406098;
+    --light_blue:#36F7FF;
+    --bright_orange: #FF5703;
+    --light_orange: #FF7500;
+
+}
 
 .card-w {
     width: 25em;

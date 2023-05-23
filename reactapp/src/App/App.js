@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 
 //IMPORTING PAGES EXAMPLE
-import {Home, Example} from '../Pages';
+import {Home, Color} from '../Pages';
 
 //IMPORTING COMPONENTS EXAMPLE
 import {Card} from '../Components';
@@ -23,7 +23,7 @@ class App extends Component {
           {/*USING REACT ROUTER YOU CAN CREATE EASY TO USE URLS FOR PAGES*/}
             <Routes>
               <Route exact path='/' element={<Home />} />
-              <Route path='/example' element={<Example />} />
+              <Route path='/Color' element={<Color />} />
             </Routes>
           </BrowserRouter>
           {/* HOW TO DECLARE A COMPONENT
