@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Navigate } from 'react-router';
 import { BrowserRouter, Route, Routes, useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import {userActions} from '../actions';
 
 //IMPORTING PAGES EXAMPLE
 import {Home, Color} from '../Pages';
@@ -15,7 +15,13 @@ class App extends Component {
     constructor(props) {
       super(props);
     }
-  
+    
+    componentDidMount() {
+      //Props calls the action creator to use the server end testAction function.
+      //We pass in a message that the function will receive.
+      this.props.testAction("Message to receive");
+    }
+
     render() {  
       return (<Fragment>
         <center>
@@ -30,11 +36,21 @@ class App extends Component {
             Components get declared as if they are tags and information can be passed through them like was shown in the freecodecamp tutorials.
             The Card Tag below is a component!
             */}
-          <Card/>
+          {/*<Card/> */ }
 
         </center>
       </Fragment>);
     }
   }
+
+  function mapState(state) {
+    const { alert } = state
+    return { alert };
+  }
   
-  export default App;
+  const actionCreators = {
+    testAction: userActions.testAction
+  };
+  
+export default connect(mapState, actionCreators)(App);
+

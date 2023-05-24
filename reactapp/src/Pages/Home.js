@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import { userActions } from "../actions";
+
 
 {/* If you have looked at previous projects I am sure you have noticed that the export tends to be below
  the page or component instead of in front of the component like I have it here.  The reason for this is
@@ -9,6 +11,12 @@ to be combined as one object in the exporter. Example of what that looks like is
 export class Home extends Component {
     constructor(props) {
         super(props);
+
+        this.testAttempt = this.testAttempt.bind(this);
+    }
+
+    testAttempt() {
+        userActions.exampleAction(true);
     }
 
     render() {
@@ -24,6 +32,7 @@ export class Home extends Component {
                     <h2 className="text-left">To prep this project for actual use remove pages from folders except for index.js. Remove the references to pages within index.js instead.</h2>
 
                 </div>
+                <button onClick={this.testAttempt}>Test Button</button>
                <p>Below is an example of a component within a page. Note this card uses Boot Strap styles to function so research that if you would like to make something similar.</p>
             </div>
             </div>
