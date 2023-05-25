@@ -7,7 +7,8 @@ console.log(API);
 
 export const userActions = {
   API,
-  testAction
+  testAction,
+  exampleAction
 };
 
 function testAction(message) {
@@ -17,7 +18,32 @@ function testAction(message) {
   };
 }
 
-  // function testAction(input) {
+function exampleAction(input) {
+
+  return (dispatch) => {
+    dispatch(request("Trying example action"));
+    console.log(input);
+    
+    fetch(API + "/test", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({input}),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const {message} = data;
+        if(message) dispatch(success(message));
+      });
+    function request(action) {
+      return { type: userConstants.exampleREQUEST, action };
+    }
+    function success(message) {
+      return {type: userConstants.exampleSUCCESS, message};
+    }
+  }
+}
+
+  // function exampleAction(input) {
   //   return (dispatch) => {
   //     dispatch(request("trying function testAction()"));
 
@@ -42,4 +68,6 @@ function testAction(message) {
   //   }
   // }
 
-  
+  // function reroute(location) {
+  //   window.location.assign(`${window.location.origin}/${location}`);
+  // }

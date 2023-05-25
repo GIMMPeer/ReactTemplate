@@ -4,7 +4,17 @@ module.exports = {
 
 
 async function exampleAction(input) {
-  return {
-    message: input + "Message Received! Welcome to connecting servers!",
+  if(input != 'Hello') {
+    return {
+      message: "info not found",
+      data: {
+        dataTroop: "stormtrooper",
+        dataSith: "vader"
+      }
+    };
   }
+  return {
+    message: "input recieved: "
+  }
+
 }

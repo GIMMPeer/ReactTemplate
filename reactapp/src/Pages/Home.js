@@ -40,15 +40,14 @@ export class Home extends Component {
     }
 }
 
-{/* EXPORT WITH MULTIPLE OBJECTS EXAMPLE
+{/* EXPORT WITH MULTIPLE OBJECTS EXAMPLE */}
 function mapState(state) {
     const { session } = state;
     return { session };
 }
 
 const actionCreators = {
-    signin: userActions.signin
+    
 };
 
-const connectedLoginPage = connect(mapState, actionCreators)(LoginPage);
-export { connectedLoginPage as LoginPage };*/}
+export default connect(mapState, actionCreators)(Home);

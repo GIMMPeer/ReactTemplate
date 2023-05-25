@@ -20,6 +20,7 @@ class App extends Component {
       //Props calls the action creator to use the server end testAction function.
       //We pass in a message that the function will receive.
       this.props.testAction("Message to receive");
+      this.props.exampleAction('Hello');
     }
 
     render() {  
@@ -49,7 +50,8 @@ class App extends Component {
   }
   
   const actionCreators = {
-    testAction: userActions.testAction
+    testAction: userActions.testAction,
+    exampleAction: userActions.exampleAction
   };
   
 export default connect(mapState, actionCreators)(App);
